@@ -1,3 +1,4 @@
+import { StoreProvider } from "@/shared/store/store-provider";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,7 +13,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body>{children}</body>
+            <body>
+                <StoreProvider>{children}</StoreProvider>
+            </body>
         </html>
     );
 }
